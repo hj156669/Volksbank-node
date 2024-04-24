@@ -1,0 +1,37 @@
+header{
+    background-color: rgb(168, 211, 200);
+    Font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    }
+    
+    h1{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h2{
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    
+    footer{
+        background-color: cornsilk;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Der folgende Style wirkt auf eine class namens flex-container
+    eine Class wird in der styles.css immer mit einem führenden Punkt dargestellt*/
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(168, 211, 200);
+      }
+      
+      /* Der folgende Style wirkt auf alle DIVs innerhalb eines flex-containers*/
+      .flex-container > div {
+        background-color: #f1f1f1;
+        width: 300px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+      }
