@@ -18,7 +18,7 @@ console.log('Gib das Ergebnis der Addition von a und b aus.');
 // Wenn links oder rechts vom Plus-Operator ein String steht, wird verkettet.
 // Wenn links und rechts Zahlen stehen, wird addiert.
 console.log(a+b);
-console.log('Das Ergebnis der Addition: ' (a + b));
+console.log('Das Ergebnis der Addition: ' + (a + b));
 
 console.log('Aufgabe 3');
 console.log('Gib das Ergebnis der Subtraktion, Multiplikation, Division von a und b aus.');
@@ -54,9 +54,9 @@ let laufzeit = 2;
 let startkapital = 100;
 let zinssatz = 0.1;   /* Das Komma ist zur Entwicklungszeit ein Punkt. */
 
-let kapitalNacheinemJahr = startkapital * (1 + zinssatz);
+let kapitalNachEinemJahr = startkapital * (1 + zinssatz);
 
-console.log("Kapital nach einem Jahr: " + kapitalNacheinemJahr + "EUR.");
+console.log("Kapital nach einem Jahr: " + kapitalNachEinemJahr + "EUR.");
 
 let kapitalNachZweiJahren = kapitalNachEinemJahr * (1+ zinssatz);
 
@@ -65,3 +65,41 @@ console.log("Kapital nach zwei Jahren: " + kapitalNachZweiJahren + "EUR.");
 let endkapital = Math.pow((startkapital * zinssatz),laufzeit);
 
 console.log("Endkapital nach " + laufzeit + " Jahren: " + endkapital + "EUR.");
+
+console.log('Aufgabe 7');
+console.log('Die Werte aus der vorherigen Aufgabe werden als Reihe dargestellt.');
+
+// Im Zeitpunkt Null ist das endkapital = dem startkapital
+endkapital = startkapital;
+console.log(endkapital);
+
+// Nach dem ersen Jahr erhöht sich das Endkapital um den Faktor 1,1
+endkapital = endkapital * (1 + zinssatz);
+console.log(endkapital);
+
+// Nach dem zweiten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = endkapital * (1 + zinssatz);
+console.log(endkapital);
+
+// Nach dem dritten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = endkapital * (1 + zinssatz);
+console.log(endkapital);
+
+// Nach dem vierten Jahr wird dem Endkapital der Wert des Endkapitals * 1,1 zugewiesen.
+endkapital = endkapital * (1 + zinssatz);
+console.log(endkapital);
+
+console.log('Aufgabe 8');
+console.log('In Aufgabe 7 wurde die Anweisung endkapital = ... mehrfach wiederholt.');
+console.log('Um sich Tipparbeit zu sparen und die wiederholung der Anweisung in der');
+console.log('gewünschten Häufigkeit durchzuführen, nutzt der Programmierer eine Schleife.');
+
+startkapital = 100;
+endkapital = startkapital;
+zinssatz = 0.1;
+laufzeit = 3;
+
+for (let i = 0; i < laufzeit; i++) {
+    endkapital = endkapital * (1 + zinssatz);
+    console.log("Endkapital nach Jahr " + (i+1) + ": " + endkapital + "EUR.");
+}
