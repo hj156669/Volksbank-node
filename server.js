@@ -16,7 +16,14 @@ const PORT = 3000;
 const HOST = '0.0.0.0';
 
 // App
+
 const app = express();
+
+// Es wird der App bekanntgegeben, wo die Styles zu finden sind.
+app.use(express.static('public'))
+
+
+
 app.get('/', (req, res) => {
 
 	// res ist die Amtwort des Servers an den Browser.
@@ -30,6 +37,15 @@ app.get('/', (req, res) => {
 	res.render('index.ejs',{});
 });
 
+// Wenn im Browser die Adresse .../agb aufgerufen wird, wird der Server aufgefordert, 
+// die angefragte Seite an den Browser zurückzugeben.
+// Der Server arbeitet dazu die Funktion app.get('agb)... ab.
+app.get('agb', (req, res) => {
+
+	// Der Server gibt die gerenderte EJS-Seite an den 
+	// Browser zurück.
+    res.render('agb.ejs',{});
+});
 
 // Mit listen wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen. 
@@ -46,4 +62,4 @@ console.log(`Running on http://${HOST}:${PORT}`);
 // Mit der Funktion require wird die Datei in den runden Klammern eingelesen.
 //require('./uebungen/03-objekte.js');
 //require('./klausuren/klausur20240930.js');
-require('./uebungen/04-funktionen.js');
+//require('./uebungen/04-funktionen.js');
