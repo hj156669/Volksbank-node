@@ -40,12 +40,41 @@ app.get('/', (req, res) => {
 // Wenn im Browser die Adresse .../agb aufgerufen wird, wird der Server aufgefordert, 
 // die angefragte Seite an den Browser zurückzugeben.
 // Der Server arbeitet dazu die Funktion app.get('agb)... ab.
-app.get('agb', (req, res) => {
+app.get('/agb', (req, res) => {
 
 	// Der Server gibt die gerenderte EJS-Seite an den 
 	// Browser zurück.
     res.render('agb.ejs',{});
 });
+
+app.get('/hilfe', (req, res) => {
+    res.render('hilfe.ejs',{});
+});
+
+app.get('/kontenuebersicht', (req, res) => {
+    res.render('kontenuebersicht.ejs',{});
+});
+
+app.get('/geldAnlegen', (req, res) => {
+    res.render('geldAnlegen.ejs',{});
+});
+
+app.get('/kreditBeantragen', (req, res) => {
+    res.render('kreditBeantragen.ejs',{});
+});
+
+app.get('/postfach', (req, res) => {
+    res.render('postfach.ejs',{});
+});
+
+app.get('/profil', (req, res) => {
+    res.render('profil.ejs',{});
+});
+
+app.get('/ueberweisungAusführen', (req, res) => {
+    res.render('ueberweisungAusführen.ejs',{});
+});
+
 
 // Mit listen wird der Server angewiesen, auf den angegebenen Host und
 // Port zu lauschen. 
